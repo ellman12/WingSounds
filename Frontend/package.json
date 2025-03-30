@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "wing-sounds",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -17,13 +17,14 @@
     "@mui/lab": "^6.0.0-beta.27",
     "@mui/material": "^6.4.4",
     "@tailwindcss/cli": "^4.0.6",
-    "@tailwindcss/vite": "^4.0.6",
+    "@tailwindcss/vite": "^4.0.17",
     "@uidotdev/usehooks": "^2.4.1",
     "antd": "^5.24.1",
+    "axios": "^1.8.4",
     "framer-motion": "^12.4.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.6"
+    "tailwindcss": "^4.0.17"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

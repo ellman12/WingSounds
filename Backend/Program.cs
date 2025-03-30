@@ -16,8 +16,7 @@ public static class Program
 
 		builder.Services.AddCors(options =>
 		{
-			options.AddPolicy("AllowAll",
-			policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+			options.AddPolicy("AllowReactApp", policy => policy.WithOrigins("http://localhost").AllowAnyMethod().AllowAnyHeader());
 		});
 
 		builder.WebHost.ConfigureKestrel(options =>
@@ -28,7 +27,7 @@ public static class Program
 		builder.Services.AddControllers();
 		var app = builder.Build();
 
-		app.UseCors("AllowAll");
+		app.UseCors("AllowReactApp");
 		app.UseAuthorization();
 		app.MapControllers();
 		app.Run();
