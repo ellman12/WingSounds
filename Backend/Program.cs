@@ -20,6 +20,11 @@ public static class Program
 			policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 		});
 
+		builder.WebHost.ConfigureKestrel(options =>
+		{
+			options.Listen(IPAddress.Any, 5000);
+		});
+
 		builder.Services.AddControllers();
 		var app = builder.Build();
 
