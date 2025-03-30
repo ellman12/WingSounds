@@ -12,8 +12,7 @@ const SoundButton: FC<Props> = ({sound}) => {
     }
 
     async function sendSound() {
-        const idk = await axiosInstance.post("soundboard/send-soundboard-sound", JSON.stringify(sound));
-        console.log(idk);
+        await axiosInstance.post("soundboard/send-soundboard-sound", {guild_id: sound.guild_id, sound_id: sound.sound_id});
     }
 
     return (

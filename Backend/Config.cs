@@ -12,6 +12,8 @@ public sealed record Config
 
 	public ulong DefaultVoiceChannelId { get; init; }
 
+	public string ServerUrl { get; init; }
+
 	///Read in config.json from project root and parse it.
 	public static Config FromJson()
 	{
