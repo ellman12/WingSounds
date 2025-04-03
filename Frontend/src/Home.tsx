@@ -1,9 +1,11 @@
-import SoundButton from "./components/SoundButton.tsx";
+import SoundButtons from "./components/SoundButtons.tsx";
 
 export default function Home() {
     return (
-        <div className="bg-[#111214] w-full h-full">
-            <SoundButton sound={{name: "Bombs", sound_id: "1349243344420606034", guild_id: "1349171772695773305"}}/>
+        <div className="bg-[#111214] flex flex-col gap-4 w-full h-full p-16">
+            <h1 className="text-2xl text-white">WingTech Bot Mk 2 Soundboard</h1>
+
+            <SoundButtons />
         </div>
     );
 }
