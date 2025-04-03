@@ -1,6 +1,6 @@
 import {FC} from "react";
 import SoundboardSound from "../api/SoundboardSound.ts";
-import axiosInstance from "../api/axios.ts";
+import http from "../api/http.ts";
 
 interface Props {
     sound: SoundboardSound;
@@ -12,7 +12,7 @@ const SoundButton: FC<Props> = ({sound}) => {
     }
 
     async function sendSound() {
-        await axiosInstance.post("soundboard/send-soundboard-sound", {guild_id: sound.guild_id, sound_id: sound.sound_id});
+        await http.post("soundboard/send-soundboard-sound", {guild_id: sound.guild_id, sound_id: sound.sound_id});
     }
 
     return (
