@@ -16,7 +16,7 @@ const SoundButton: FC<Props> = ({sound}) => {
     }
 
     return (
-        <button className="mx-64" onClick={onClick}>
+        <button className="bg-[#2B2D31] text-white px-6 py-2 rounded-lg hover:cursor-pointer" onClick={onClick}>
             {sound.name}
         </button>
     );
