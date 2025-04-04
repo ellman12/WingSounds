@@ -13,7 +13,7 @@ export default function SoundButtons() {
     }, []);
 
     return (
-        <div className="grid grid-cols-5 gap-4 w-1/3">
+        <div className="grid grid-cols-5 gap-4">
             {sounds?.length > 0 && sounds.map(sound => <SoundButton key={sound.sound_id} sound={sound}/>)}
         </div>
     );

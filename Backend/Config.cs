@@ -4,6 +4,8 @@ public sealed record Config
 {
 	public string LoginToken { get; init; }
 
+	public string Password { get; init; }
+
 	public ulong UserId { get; init; }
 
 	public ulong[] ServerIds { get; init; }
