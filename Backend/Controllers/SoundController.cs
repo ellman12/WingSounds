@@ -15,15 +15,11 @@ public sealed class SoundController : ControllerBase
 	[HttpGet, Route("available-sounds")]
 	public async Task<IActionResult> AvailableSounds()
 	{
-		var response = await httpClient.GetAsync("users/@me/guilds");
-		var guilds = JsonSerializer.Deserialize<Guild[]>(await response.Content.ReadAsStringAsync());
+		var sounds = new List<SoundboardSound>();
 
-		response = await httpClient.GetAsync("soundboard-default-sounds");
-		var sounds = JsonSerializer.Deserialize<SoundboardSound[]>(await response.Content.ReadAsStringAsync()).ToList();
-
-		foreach (var guild in guilds)
+		foreach (var id in Program.Config.ServerIds)
 		{
-			response = await httpClient.GetAsync($"guilds/{guild.Id}/soundboard-sounds");
+			var response = await httpClient.GetAsync($"guilds/{id}/soundboard-sounds");
 			string json = await response.Content.ReadAsStringAsync();
 
 			var items = JsonDocument.Parse(json).RootElement.GetProperty("items");

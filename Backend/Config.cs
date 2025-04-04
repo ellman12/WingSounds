@@ -6,7 +6,7 @@ public sealed record Config
 
 	public ulong UserId { get; init; }
 
-	public ulong ServerId { get; init; }
+	public ulong[] ServerIds { get; init; }
 
 	public ulong BotChannelId { get; init; }
 

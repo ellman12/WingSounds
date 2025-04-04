@@ -1,7 +1,7 @@
 {
   "LoginToken": "",
   "UserId": 0,
-  "ServerId": 0,
+  "ServerIds": [],
   "BotChannelId": 0,
   "DefaultVoiceChannelId": 0,
   "ServerUrl": "http://"

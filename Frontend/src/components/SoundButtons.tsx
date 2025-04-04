@@ -8,12 +8,12 @@ export default function SoundButtons() {
 
     useEffect(() => {
         http.get("soundboard/available-sounds")
-            .then(e => setSounds(e.data as SoundboardSound[]))
+            .then(e => setSounds(e.data.sounds as SoundboardSound[]))
             .catch(e => console.error(e));
     }, []);
 
     return (
-        <div className="grid grid-cols-5 gap-4 w-96">
+        <div className="grid grid-cols-5 gap-4 w-1/3">
             {sounds?.length > 0 && sounds.map(sound => <SoundButton key={sound.sound_id} sound={sound}/>)}
         </div>
     );
